@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Amores !!</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        /* Banner Principal */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url(amigas.jpeg);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-explorar {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        /* --- ESTILO DA TELA DA GRUTA (MODAL) --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none; /* Começa escondido */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            color: #333;
+            position: relative;
+            text-align: left;
+        }
+
+        .modal-content h2 { color: #004a8d; margin-bottom: 15px; }
+        .modal-content p { line-height: 1.6; margin-bottom: 20px; }
+
+        .btn-fechar {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Minhas Melhores amigas que eu amo</h1>
+        <p>Aperte nesse botão para saber oque escrevi para vocês</p>
+        <button class="btn-explorar" onclick="mostrarGruta()">Mensagem</button>
+    </section>
+
+    <div class="modal-overlay" id="modalGruta">
+        <div class="modal-content">
+            <h2>Ao meu grupinho...</h2>
+            <p>Desde de que eu conheço vocês, vocês conseguem ser as melhores de todas!Eu simplesmente amo vocês demais, meu grupinho do 6 ao 9 que eu vou levar a vida inteira nos meu coração, eu amo vocês minhas meninas maravilhosas! Não sei oque eu seria sem vocês</p>
+            <p><strong>Amo Vocês :D</strong> do 9 ano para a vida!</p>
+            <button class="btn-fechar" onclick="fecharGruta()">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modalGruta');
+
+        function mostrarGruta() {
+            modal.style.display = 'flex'; // Muda de 'none' para 'flex' para aparecer
+        }
+
+        function fecharGruta() {
+            modal.style.display = 'none'; // Esconde novamente
+        }
+
+        // Fecha se o usuário clicar fora da caixa branca
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                fecharGruta();
+            }
+        }
+    </script>
+
+</body>
+</html>
